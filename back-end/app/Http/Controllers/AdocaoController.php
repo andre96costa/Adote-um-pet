@@ -13,6 +13,11 @@ class AdocaoController extends Controller
             'pet_id' => 'required|exists:pets,id',
             'email'  => 'required|email',
             'valor'  => 'required|numeric|between:10,100',
+        ],
+        [
+            'required' => ':attribute é obrigatório',
+            'email' => 'Preencha um e-mail valido',
+            'valor.between' => 'O valor deve estar entre (10 e 100)',
         ]);
         return Adocao::create($request->all());
     }
