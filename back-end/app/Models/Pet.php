@@ -14,4 +14,9 @@ class Pet extends Model
         'historia',
     	'foto',
     ];
+
+    public function adocao()
+    {
+        return $this->hasOne(Adocao::class, 'pet_id', 'id');
+    }
 }

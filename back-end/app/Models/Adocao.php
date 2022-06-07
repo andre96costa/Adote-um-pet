@@ -15,5 +15,10 @@ class Adocao extends Model
         'email',
         'valor',		
     ];
+
+    public function pet()
+    {
+        return $this->belongsTo(Pet::class, 'pet_id', 'id');
+    }
     
 }
